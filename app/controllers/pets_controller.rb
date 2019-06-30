@@ -18,7 +18,8 @@ class PetsController < ApplicationController
       @pet.owner = @owner
     end
 
-    @pet.save
+    @pet.save #this is required because we didn't use the shovel operator like we did in the owners_controller, so it didnt
+    #automatically trigger SQL to save this new data to our database
 
     redirect to "pets/#{@pet.id}"
   end
